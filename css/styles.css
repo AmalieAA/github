@@ -34,3 +34,75 @@ img {
     max-width: 100%; /* Bredde må maks fylde 100% */
     height: auto; /* Højden skal tilpasse sig */
 }
+
+.ping-pong{
+    height:100vh;
+    width: 100vw;
+    position: relative;
+    overflow: clip;
+}
+.ball {
+    --ball-size: 50px;
+    background-color: black;
+    border-radius: 50%;
+    height: var(--ball-size);
+    width: var(--ball-size);
+    margin: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation-name: ball-animation;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.left-player,
+.right-player{
+    --player-height: 60px;
+    background-color: black;
+    height: var(--player-height);
+    width: 15px;
+    position: absolute;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    transform: translate(0, -50%);
+}
+.left-player{
+    left: 2px;
+    top: 50%;
+    animation-name: left-box;
+
+}
+.right-player{
+    top: 50%;
+    right: 2px;
+    animation-name: right-box;
+}
+@keyframes right-box {
+    0%{top: 50%;}
+    25%{top: 50%;}
+    50%{top: 65%;}
+    75%{top: 50%;}
+    100%{top: 50%;}
+
+}
+@keyframes left-box {
+    0%{top: 50%;}
+    25%{top: 50%;}
+    50%{top: 50%;}
+    75%{top: 50%;}
+    100%{top: 14%;}
+
+}
+
+@keyframes ball-animation {
+    0%{top: 50%; left: calc(0% + 15px);}
+    25%{top: 0%; left: 80%;}
+    50%{top: 60%; left: calc(100% - var(--ball-size) - 15px);}
+    75%{top: calc(100% - var(--ball-size)); left: 25%;}
+    100%{top: 10%;  left: calc(0% + 15px)}
+}

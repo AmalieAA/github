@@ -27,5 +27,12 @@
 <!-- i <body> har man alt indhold på siden som brugeren kan se -->
 <body>
 
+<div class="ping-pong">
+    <div class="ball"></div>
+
+    <div class="left-player"></div>
+
+    <div class="right-player"></div>
+</div>
 </body>
 </html>
