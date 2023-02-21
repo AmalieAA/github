@@ -1,7 +1,7 @@
 # Github 
 
-> tekst
+> Github øvelse 
 
-- tekst
+- Nu med Ping-Pong
 
 
